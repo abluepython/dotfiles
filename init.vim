@@ -1,22 +1,25 @@
 " Specify a directory for plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-" deoplete-jedi
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 Plug 'vim-airline/vim-airline'
-Plug 'mattn/emmet-vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'mrk21/yaml-vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+set splitbelow
+
+"vim-airline
+let g:airline_theme='simple'
 
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
@@ -25,7 +28,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " Enable emmet just for html/css
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-let g:deoplete#enable_at_startup = 1
 
 " color schema
 colorscheme torte
