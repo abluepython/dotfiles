@@ -35,6 +35,6 @@ You can execute following command in Nvim comand mode:
 
 ### Comment plugin
 
-To comment out a single line, use <leader>cc (leader is a prefix key in Nvim, the default leader key is \); to un-comment a line, use <leader>cu. 
+To comment out a single line, use <leader>cc (leader is a prefix key in Nvim, the default leader key is ["\"]); to un-comment a line, use <leader>cu. 
 To comment or uncomment several lines, add a repeating number to corresponding command, just like what you do in plain Vim. For more usages, 
 check [nerdcommenter’s documentaion](https://github.com/scrooloose/nerdcommenter)
