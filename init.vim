@@ -18,8 +18,11 @@ let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 set splitbelow
 
-"vim-airline
+" vim-airline
 let g:airline_theme='simple'
+
+" NERDTree 
+map <C-n> :NERDTreeToggle<CR>
 
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
@@ -56,5 +59,3 @@ set showmatch
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
-" NERDTree 
-map <C-n> :NERDTreeToggle<CR>
